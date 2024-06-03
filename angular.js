@@ -11,7 +11,9 @@ app.config(function($routeProvider){
     .when("/dulichchaua",{templateUrl: "dulichchaua.html",controller: "myCtrl"})
     .when("/test",{templateUrl: "test.html",controller: "myCtrl"})
     .when("/timkiem",{templateUrl: "timkiem.html",controller: "myCtrl"})
+    .when("/giohang",{templateUrl: "giohang.html",controller: "myCtrl"})
     .when("/detail/:id",{templateUrl: "chitiet.html",controller: "myCtrl"},)
+    .when("/giohang/:id",{templateUrl: "giohang.html",controller: "myCtrl"},)
     .otherwise({templateUrl: "trangchu.html",controller: "myCtrl"})
 });
 app.controller("myCtrl",function ($scope, $rootScope, $routeParams, $http) {
@@ -28,15 +30,6 @@ app.controller("myCtrl",function ($scope, $rootScope, $routeParams, $http) {
     $scope.giam=function(){
         $scope.sort='-price_after';
     }
-    $scope.redirectToSearch = function(searchTerm) {
-        if (searchTerm) {
-            $location.path('/timkiem').search({query: searchTerm});
-        }
-    };
-    var searchTerm = $routeParams.query;
-    $scope.filteredProducts = $scope.products.filter(function(p) {
-        return p.name.toLowerCase().includes(searchTerm.toLowerCase());
-    });
  });  
  app.controller("DetailController", function ($scope, $routeParams, $http) {
     $scope.product = {};
@@ -44,6 +37,21 @@ app.controller("myCtrl",function ($scope, $rootScope, $routeParams, $http) {
         $scope.product = response.data;
     }, function (error) {
         console.log('Error loading product:', error);
+    });
+});
+$(document).ready(function() {
+    $('#increment').click(function() {
+        var value = parseInt($('#number').val(), 10);
+        value = isNaN(value) ? 0 : value;
+        value++;
+        $('#number').val(value);
+    });
+
+    $('#decrement').click(function() {
+        var value = parseInt($('#number').val(), 10);
+        value = isNaN(value) ? 0 : value;
+        value--;
+        $('#number').val(value);
     });
 });
 
