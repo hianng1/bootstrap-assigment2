@@ -28,6 +28,15 @@ app.controller("myCtrl",function ($scope, $rootScope, $routeParams, $http) {
     $scope.giam=function(){
         $scope.sort='-price_after';
     }
+    $scope.redirectToSearch = function(searchTerm) {
+        if (searchTerm) {
+            $location.path('/timkiem').search({query: searchTerm});
+        }
+    };
+    var searchTerm = $routeParams.query;
+    $scope.filteredProducts = $scope.products.filter(function(p) {
+        return p.name.toLowerCase().includes(searchTerm.toLowerCase());
+    });
  });  
  app.controller("DetailController", function ($scope, $routeParams, $http) {
     $scope.product = {};
@@ -37,3 +46,5 @@ app.controller("myCtrl",function ($scope, $rootScope, $routeParams, $http) {
         console.log('Error loading product:', error);
     });
 });
+
+

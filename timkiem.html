@@ -10,7 +10,7 @@
                 </p>
             </div>
             <div  class="row">
-                <div class="col-md-4 col-6 p-2" ng-repeat="p in products | filter: search">
+                <div class="col-md-4 col-6 p-2" ng-repeat="p in filteredProducts">
                     <div class="card">
                         <div class="position-relative">
                             <a href="#!detail/{{p.id}}"><img src="{{p.image}}" class="card-img-top img-fluid" 

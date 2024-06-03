@@ -1,45 +1,4 @@
 <div class="container mt-4">
-    <input type="text" ng-model="search">
-    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-        Tìm kiếm
-      </button>
-      
-      <!-- Modal -->
-      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <div  class="row">
-                    <div class="col-md-4 col-6 p-2" ng-repeat="p in products | filter: {name: search}">
-                        <div class="card">
-                            <div class="position-relative">
-                                <a href="#!detail/{{p.id}}"><img src="{{p.image}}" class="card-img-top img-fluid" 
-                                        alt="{{p.name}}" style="height: 270px; width: 100%; object-fit: cover;"></a>
-                            </div>
-                            <div class="card-body">
-                                <h5 class="card-title">{{p.name}}</h5>
-                                <p class="card-text"><small class="text-muted">{{p.time}}</small></p>
-                                <p class="card-text text-muted"><del>{{p.price_before| number:0}}đ</del> <strong
-                                        class="text-danger">{{p.price_after| number:0}}đ</strong>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Save changes</button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-        
-
     <div class="row">
         <div class="col-sm-9">
             <h2 class="text-danger"><b>Danh sách các Tour Du lịch miền nam</b></h2>
@@ -51,7 +10,7 @@
                 </p>
             </div>
             <div class="row">
-                <div class="col-md-4 col-6 p-2" ng-repeat="p in products| filter: {'category' : 'tour miền nam'}| orderBy: sort">
+                <div class="col-md-4 col-6 p-2" ng-repeat="p in products| filter: {'category' : 'tour miền nam'}| orderBy: sort| filter: search">
                     <div class="card">
                         <div class="position-relative">
                             <a href="#!detail/{{p.id}}"><img src="{{p.image}}" class="card-img-top img-fluid" 
@@ -69,8 +28,10 @@
             </div>
         </div>
         <div class="col-sm-3">
-            <h4 class="text-primary"><b>LỌC TOUR THEO</b></h4>
+            <h4 class="text-primary"><b>Tìm kiếm</b></h4>
+            <input type="text" ng-model="search" placeholder="Tìm kiếm theo tên">
             <hr>
+            <h4 class="text-primary"><b>LỌC TOUR THEO</b></h4>
             <div>
                 <p><b>Khởi hành từ</b></p>
                 <div class="form-check">
