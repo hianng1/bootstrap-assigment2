@@ -44,7 +44,7 @@
                         </a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="#!dulichmiennam">Miền Nam</a></li>
-                            <li><a class="dropdown-item" href="#">Miền Trung</a></li>
+                            <li><a class="dropdown-item" href="#!test">Miền Trung</a></li>
                             <li><a class="dropdown-item" href="#">Miền Bắc</a></li>
                         </ul>
                     </li>
@@ -54,7 +54,7 @@
                             DU LỊCH NƯỚC NGOÀI
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Châu Á</a></li>
+                            <li><a class="dropdown-item" href="#!dulichchaua">Châu Á</a></li>
                             <li><a class="dropdown-item" href="#">Châu Âu</a></li>
                             <li><a class="dropdown-item" href="#">Châu Mỹ</a></li>
                         </ul>
@@ -122,10 +122,12 @@
                         <a class="dropdown-item" href="#">Từ Hồ Chí Minh</a>
                     </div>
                 </div>
-                <input type="text" class="form-control col" placeholder="Tìm kiếm Tour...">
+                <input type="text" class="form-control col" placeholder="Tìm kiếm Tour..." ng-model="search">
                 <div class="input-group-append d-flex">
-                    <button class="btn btn-primary" type="button"><i class="fa-solid fa-magnifying-glass"></i> TÌM
-                        TOUR NGAY</button>
+                    <a href="#!timkiem">
+                        <button class="btn btn-primary" type="button"><i class="fa-solid fa-magnifying-glass"></i> TÌM
+                            TOUR NGAY</button>
+                    </a>
                 </div>
             </div>
         </div>

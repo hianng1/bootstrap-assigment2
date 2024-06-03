@@ -80,7 +80,7 @@
             "price_after": 10500000,
             "time":"5 ngày 4 đêm",
             "image": "https://pttravel.vn/wp-content/uploads/2022/12/tour-bali-5n4d.jpg",
-            "category": "tour nước ngoài nổi bật"
+            "category": "tour nước ngoài nổi bật, tour châu á"
         },
         {
             "id": 10,
@@ -89,7 +89,7 @@
             "price_after": 3480000,
             "time":"3 ngày 2 đêm",
             "image": "https://pttravel.vn/wp-content/uploads/2023/11/Tour-Trung-Quoc-3-ngay-2-dem-gia-re-800x800.jpg",
-            "category": "tour nước ngoài nổi bật"
+            "category": "tour nước ngoài nổi bật, tour châu á"
         },
         {
             "id": 11,
@@ -98,7 +98,7 @@
             "price_after": 19490000,
             "time":"6 ngày 5 đêm",
             "image": "https://pttravel.vn/wp-content/uploads/2023/11/Du-lich-Trung-Quoc-6N5D-800x800.jpg",
-            "category": "tour nước ngoài nổi bật"
+            "category": "tour nước ngoài nổi bật, tour châu á"
         },
         {
             "id": 12,
@@ -107,7 +107,7 @@
             "price_after": 5000000,
             "time":"5 ngày 4 đêm",
             "image": "https://pttravel.vn/wp-content/uploads/2023/11/Du-lich-Trung-Quoc-6N5D-800x800.jpg",
-            "category": "tour nước ngoài nổi bật"
+            "category": "tour nước ngoài nổi bật, tour châu á"
         },
         {
             "id": 13,
@@ -180,6 +180,42 @@
             "time":"2 ngày 1 đêm",
             "image": "https://pttravel.vn/wp-content/uploads/2023/12/Du-xuan-Ha-Noi-Yen-Tu-Cua-Ong-Con-Son-Kiep-Bac-2-ngay-1-dem-500x500.jpg",
             "category": "tour khuyến mãi, tour miền bắc"
+        },
+        {
+            "id": 21,
+            "name": "Tour du lịch Thái Lan 5 ngày 4 đêm từ Hà Nội bay chuyến sáng",
+            "price_before": 11190000,
+            "price_after": 9590000,
+            "time":" 5 ngày 4 đêm",
+            "image": "https://pttravel.vn/wp-content/uploads/2022/12/tour-thai-lan-5-ngay-4-dem-tu-ha-noi-500x500.jpg",
+            "category": "tour nước ngoài nổi bật, tour châu á"
+        },
+        {
+            "id": 22,
+            "name": "Tour du lịch 5 ngày 4 đêm Thái Lan bay chuyến Sáng – Tối",
+            "price_before": 11490000,
+            "price_after": 8390000,
+            "time":"5 ngày 4 đêm",
+            "image": "https://pttravel.vn/wp-content/uploads/2022/12/gia-tour-thai-lan-bangkok-pattaya-5-ngay-4-dem-500x499.jpg",
+            "category": "tour nước ngoài nổi bật, tour châu á"
+        },
+        {
+            "id": 23,
+            "name": "Tour Bali 4 ngày 3 đêm từ Hà Nội",
+            "price_before": 12490000,
+            "price_after": 9900000,
+            "time":"4 ngày 3 đêm",
+            "image": "https://pttravel.vn/wp-content/uploads/2022/12/tour-bali-4-ngay-3-dem-tu-ha-noi-3-1-500x438.jpg",
+            "category": "tour nước ngoài nổi bật, tour châu á"
+        },
+        {
+            "id": 24,
+            "name": "Tour du lịch Thái Lan Bangkok – Pattaya 4 ngày 3 đêm từ Hà Nội",
+            "price_before": 0,
+            "price_after": 8090000,
+            "time":"4 ngày 3 đêm",
+            "image": "https://pttravel.vn/wp-content/uploads/2022/11/tour-thai-lan-bangkok-pattaya-4-ngay-3-dem-500x376.jpg",
+            "category": "tour nước ngoài nổi bật, tour châu á"
         }    
     ]
 }

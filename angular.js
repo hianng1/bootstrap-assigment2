@@ -8,6 +8,9 @@ app.config(function($routeProvider){
     .when("/dangky",{templateUrl: "dangky.html",controller: "myCtrl"})
     .when("/sanpham",{templateUrl: "sanpham.html",controller: "myCtrl"})
     .when("/dulichmiennam",{templateUrl: "dulichmiennam.html",controller: "myCtrl"})
+    .when("/dulichchaua",{templateUrl: "dulichchaua.html",controller: "myCtrl"})
+    .when("/test",{templateUrl: "test.html",controller: "myCtrl"})
+    .when("/timkiem",{templateUrl: "timkiem.html",controller: "myCtrl"})
     .when("/detail/:id",{templateUrl: "chitiet.html",controller: "myCtrl"},)
     .otherwise({templateUrl: "trangchu.html",controller: "myCtrl"})
 });
@@ -18,6 +21,13 @@ app.controller("myCtrl",function ($scope, $rootScope, $routeParams, $http) {
             console.log($scope.products);
             $scope.detailPro=$scope.products.find(item=>item.id==$routeParams.id);
         });
+    $scope.sort='price_after';
+    $scope.tang=function(){
+        $scope.sort='price_after';
+    }
+    $scope.giam=function(){
+        $scope.sort='-price_after';
+    }
  });  
  app.controller("DetailController", function ($scope, $routeParams, $http) {
     $scope.product = {};
