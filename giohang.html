@@ -42,22 +42,55 @@
                                 <input type="text" class="form-control" id="exampleInputEmail1"
                                     aria-describedby="emailHelp" placeholder="Địa chỉ">
                             </div>
-                            <label for=""><b>Số điện thoại:</b></label>
+                            <div class="mb-3">
+                                <label for=""><b>Số điện thoại:</b></label>
                                 <input type="text" class="form-control" id="exampleInputEmail1"
                                 aria-describedby="emailHelp" placeholder="Số điện thoại">
-                            <br>
-                            <label for=""><b>Địa chỉ email:</b></label>
+                            </div>
+                            <div class="mb-3">
+                                <label for=""><b>Địa chỉ email:</b></label>
                                 <input type="text" class="form-control" id="exampleInputEmail1"
                                 aria-describedby="emailHelp" placeholder="Địa chỉ email">
-                            <label for=""><b>Ghi chú thêm:</b></label>
-                            <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
+                            </div>
+                            <div class="">
+                                <label for=""><b>Ghi chú thêm:</b></label>
+                                <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
+                            </div>
                         </div>
         
-                        <button type="submit" class="btn btn-warning text-light fw-bold m-3">GỬI</button>
+                        <button type="submit" class="btn btn-warning text-light fw-bold my-3">GỬI THÔNG TIN LIÊN HỆ</button>
                     </form>
                 </div>
             </div>
         </div>
-        <div class="col-sm-5"></div>
+        <div class="col-sm-5">
+            <div class="card">
+                <div class="card-body">
+                    <div class="form">
+                        <legend class="fw-bold">THÔNG TIN TOUR ĐÃ ĐẶT</legend>
+                        <form action="">
+                            <table class="table">
+                                <thead>
+                                  <tr>
+                                    <th scope="col">TOUR</th>
+                                    <th scope="col">TẠM TÍNH</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <tr>
+                                    <td>{{products.name}}</td>
+                                    <td>@mdo</td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                              <p><b>Đặt giữ chỗ trước, thanh toán sau</b></p>
+                            <button class="btn btn-primary mb-3"><b>ĐẶT TOUR NGAY</b></button>
+                            <p>Thông tin cá nhân của bạn sẽ được sử dụng để xử lý đơn hàng, tăng trải nghiệm sử dụng website, và cho các mục đích cụ thể khác
+                                 đã được mô tả trong chính sách riêng tư của chúng tôi.</p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
