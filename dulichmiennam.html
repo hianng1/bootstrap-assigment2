@@ -1,0 +1,111 @@
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-sm-9">
+            <h2 class="text-danger"><b>Danh sách các Tour Du lịch miền nam</b></h2>
+            <div class="row">
+                <p>
+                    <b>Sắp xếp theo:</b>
+                    <button type="button" class="btn btn-warning text-light fw-semibold">Giá tăng dần</button>
+                    <button type="button" class="btn btn-warning text-light fw-semibold">Giá giảm dần</button>
+                </p>
+            </div>
+            <div class="row">
+                <div class="col-md-4 col-6 p-2" ng-repeat="p in products| filter: {'category' : 'tour miền nam'}">
+                    <div class="card">
+                        <div class="position-relative">
+                            <a href="#!detail/{{p.id}}"><img src="{{p.image}}" class="card-img-top img-fluid" 
+                                    alt="{{p.name}}" style="height: 270px; width: 100%; object-fit: cover;"></a>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">{{p.name}}</h5>
+                            <p class="card-text"><small class="text-muted">{{p.time}}</small></p>
+                            <p class="card-text text-muted"><del>{{p.price_before| number:0}}đ</del> <strong
+                                    class="text-danger">{{p.price_after| number:0}}đ</strong>
+                            <p class="text-end"><a href="#!detail/{{p.id}}">xem chi tiết</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <h4 class="text-primary"><b>LỌC TOUR THEO</b></h4>
+            <hr>
+            <div>
+                <p><b>Khởi hành từ</b></p>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="depart" id="departHanoi">
+                    <label class="form-check-label" for="departHanoi">
+                        Hà Nội
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="depart" id="departHCM">
+                    <label class="form-check-label" for="departHCM">
+                        Hồ Chí Minh
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="depart" id="departNhaTrangDalat">
+                    <label class="form-check-label" for="departNhaTrangDalat">
+                        Nha Trang - Đà Lạt
+                    </label>
+                </div>
+            </div>
+            <div>
+                <p><b>Lịch trình</b></p>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="schedule" id="schedule2d1n">
+                    <label class="form-check-label" for="schedule2d1n">
+                        2 ngày 1 đêm
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="schedule" id="schedule3d2n">
+                    <label class="form-check-label" for="schedule3d2n">
+                        3 ngày 2 đêm
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="schedule" id="schedule4d3n">
+                    <label class="form-check-label" for="schedule4d3n">
+                        4 ngày 3 đêm
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="schedule" id="schedule5d4n">
+                    <label class="form-check-label" for="schedule5d4n">
+                        5 ngày 4 đêm
+                    </label>
+                </div>
+            </div>
+            <div>
+                <p><b>Mức giá</b></p>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="priceRange" id="price1to2">
+                    <label class="form-check-label" for="price1to2">
+                        1 triệu - 2 triệu
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="priceRange" id="price2to3">
+                    <label class="form-check-label" for="price2to3">
+                        2 triệu - 3 triệu
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="priceRange" id="price3to4">
+                    <label class="form-check-label" for="price3to4">
+                        3 triệu - 4 triệu
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="priceRange" id="price5to6">
+                    <label class="form-check-label" for="price5to6">
+                        5 triệu - 6 triệu
+                    </label>
+                </div>
+            </div>
+            <p></p>
+        </div>
+    </div>
+</div>

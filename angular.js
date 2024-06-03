@@ -7,6 +7,7 @@ app.config(function($routeProvider){
     .when("/dangnhap",{templateUrl: "dangnhap.html",controller: "myCtrl"})
     .when("/dangky",{templateUrl: "dangky.html",controller: "myCtrl"})
     .when("/sanpham",{templateUrl: "sanpham.html",controller: "myCtrl"})
+    .when("/dulichmiennam",{templateUrl: "dulichmiennam.html",controller: "myCtrl"})
     .when("/detail/:id",{templateUrl: "chitiet.html",controller: "myCtrl"},)
     .otherwise({templateUrl: "trangchu.html",controller: "myCtrl"})
 });
@@ -26,7 +27,3 @@ app.controller("myCtrl",function ($scope, $rootScope, $routeParams, $http) {
         console.log('Error loading product:', error);
     });
 });
-function closeModalAndNavigate() {
-    $('#exampleModal').modal('hide'); // Đóng modal sử dụng jQuery và Bootstrap
-    window.location.href = '#!dangnhap'; // Chuyển hướng người dùng
-}

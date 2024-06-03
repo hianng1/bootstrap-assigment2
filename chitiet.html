@@ -41,8 +41,8 @@
                     </div>
                     <div class="col-sm-5 ps-3 pt-3">
                         <h3>{{product.name}}</h3>
-                        <p>Giá tour trọn gói: <br><del class="text-info fs-5 fw-bold">{{product.price-before}}</del> <span
-                                class="text-danger fs-3 fw-bold">{{product.price-after}}</span></p>
+                        <p>Giá tour trọn gói: <br><del class="text-info fs-5 fw-bold">{{product.price_before| number:0}}đ</del> <span
+                                class="text-danger fs-3 fw-bold">{{product.price_after| number:0}}đ</span></p>
                         <div class="card">
                             <div class="card-body">
                                 <p class="m-0 p-0"><i class="fa-solid fa-location-dot"></i> Xuất phát từ: <strong>Hà
@@ -54,9 +54,12 @@
                                 </p>
                             </div>
                         </div>
+                        <hr>
                         <div class="d-grid pt-3">
                             <button class="btn btn-primary btn-block">ĐẶT TOUR</button>
                         </div>
+                        <br>
+                        <p>Danh mục: {{product.category}}</p>
                     </div>
                 </div>
                 <div class="row mt-3">
