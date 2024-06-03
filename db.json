@@ -1,0 +1,114 @@
+{
+    "products":
+    [
+        {
+            "id": 1,
+            "name": "Tour Đà Nẵng Hội An 4 ngày 3 đêm từ Hà Nội giá tốt",
+            "price-before": 5550000,
+            "price-after": 5050000,
+            "time":"4 ngày 3 đêm",
+            "image": "https://pttravel.vn/wp-content/uploads/2024/01/tour-da-nang-hoi-an-3-ngay-2-dem-800x800.jpg",
+            "category": "tour khuyến mãi"
+        },
+        {
+            "id": 2,
+            "name": "Tour Đà Nẵng Hội An 3 ngày 2 đêm từ Hà Nội trọn gói",
+            "price-before": 3590000,
+            "price-after": 3390000,
+            "time":"3 ngày 2 đêm",
+            "image": "https://pttravel.vn/wp-content/uploads/2023/12/Du-xuan-Ha-Noi-Yen-Tu-Cua-Ong-Con-Son-Kiep-Bac-2-ngay-1-dem-800x800.jpg",
+            "category": "tour khuyến mãi"
+        },
+        {
+            "id": 3,
+            "name": "Du xuân Hà Nội - Yên Tử - Cửa Ông - Côn Sơn - Kiếp Bạc 2 ngày 1 đêm",
+            "price-before": 1750000,
+            "price-after": 1420000,
+            "time":"2 ngày 1 đêm",
+            "image": "https://pttravel.vn/wp-content/uploads/2023/12/Tour-den-Ba-Chua-Kho-Chua-Dau-Chua-But-Thap-1-ngay_-800x800.jpg",
+            "category": "tour khuyến mãi"
+        },
+        {
+            "id": 4,
+            "name": "Du xuân Hà Nội - đền Bà Chúa Kho - Chùa Dâu - Chùa Bút Tháp",
+            "price-before": 645000,
+            "price-after": 510000,
+            "time":"2 ngày 1 đêm",
+            "image": "https://pttravel.vn/wp-content/uploads/2023/12/Tour-den-Ba-Chua-Kho-Chua-Dau-Chua-But-Thap-1-ngay_-800x800.jpg",
+            "category": "tour khuyến mãi"
+        },
+        {
+            "id": 5,
+            "name": "Tour du lịch Mai Châu 2 ngày 1 đêm từ Hà Nội",
+            "price-before": 1500000,
+            "price-after": 1500000,
+            "time":"2 ngày 1 đêm",
+            "image": "https://pttravel.vn/wp-content/uploads/2023/12/tour-mai-chau-2-ngay-1-dem-800x800.jpg",
+            "category": "tour trong nước"
+        },
+        {
+            "id": 6,
+            "name": "Tour du lịch Mai Châu 3 ngày 2 đêm từ Hà Nội",
+            "price-before": 1500000,
+            "price-after": 2490000,
+            "time":"3 ngày 2 đêm",
+            "image": "https://pttravel.vn/wp-content/uploads/2023/12/tour-mai-chau-3-ngay-2-dem-800x800.jpg",
+            "category": "tour trong nước"
+        },
+        {
+            "id": 7,
+            "name": "Du lịch Phan Thiết Đà Lạt 5 ngày 4 đêm giá ƯU ĐÃI",
+            "price-before": 1500000,
+            "price-after": 5450000,
+            "time":"5 ngày 4 đêm",
+            "image": "https://pttravel.vn/wp-content/uploads/2023/12/Tour-phan-thiet-da-lat-5-ngay-4-dem-800x800.jpg",
+            "category": "tour trong nước"
+        },
+        {
+            "id": 8,
+            "name": "Tour du lịch Nha Trang Đà Lạt 5 ngày 4 đêm tại PT Travel",
+            "price-before": 1500000,
+            "price-after": 5000000,
+            "time":"5 ngày 4 đêm",
+            "image": "https://pttravel.vn/wp-content/uploads/2023/12/Tour-du-lich-Nha-Trang-Da-Lat-5-ngay-4-dem-PT-Travel-800x800.jpg",
+            "category": "tour trong nước"
+        },
+        {
+            "id": 9,
+            "name": "Tour du lịch Bali 5 ngày 4 đêm từ Hà Nội",
+            "price-before": 17900000,
+            "price-after": 10500000,
+            "time":"5 ngày 4 đêm",
+            "image": "https://pttravel.vn/wp-content/uploads/2022/12/tour-bali-5n4d.jpg",
+            "category": "tour nước ngoài nổi bật"
+        },
+        {
+            "id": 10,
+            "name": "Tour Trung Quốc 3 ngày 2 đêm trọn gói combo",
+            "price-before": 5490000,
+            "price-after": 3480000,
+            "time":"3 ngày 2 đêm",
+            "image": "https://pttravel.vn/wp-content/uploads/2023/11/Tour-Trung-Quoc-3-ngay-2-dem-gia-re-800x800.jpg",
+            "category": "tour nước ngoài nổi bật"
+        },
+        {
+            "id": 11,
+            "name": "Du lịch Trung Quốc [Đại Lý-Lệ Giang-Shangrila]",
+            "price-before": 20090000,
+            "price-after": 19490000,
+            "time":"6 ngày 5 đêm",
+            "image": "https://pttravel.vn/wp-content/uploads/2023/11/Du-lich-Trung-Quoc-6N5D-800x800.jpg",
+            "category": "tour nước ngoài nổi bật"
+        },
+        {
+            "id": 12,
+            "name": "Tour Trung Quốc 5 ngày 4 đêm trọn gói",
+            "price-before": 5050000,
+            "price-after": 5000000,
+            "time":"5 ngày 4 đêm",
+            "image": "https://pttravel.vn/wp-content/uploads/2023/11/Du-lich-Trung-Quoc-6N5D-800x800.jpg",
+            "category": "tour nước ngoài nổi bật"
+        }    
+    ]
+}
+    

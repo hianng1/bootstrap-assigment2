@@ -1,0 +1,44 @@
+.no-bullets {
+    list-style-type: none;
+    margin: 15px;
+    padding: 5px;
+    padding-left: 0;
+}
+.nav-item.dropdown:hover .dropdown-menu {
+    display: block;
+    margin-top: 0; 
+}
+.navbar-brand {
+    margin: 0;
+    padding: 0;
+}
+header{
+    background-color: #F7A302
+}
+footer{
+    background-color: #005E89;
+}
+footer.container{
+        background-color: #005E89;
+}
+.brand-image {
+    margin: 10px;
+}
+.main {
+    height: 500px;
+    width: 100%;
+    background-image: url('images/pexels-andreimike-1271619.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: gray;
+}
+
+.content {
+    color: white;
+    text-align: center;
+    padding-top: 20%;
+}
+aside{
+    background-color: #EEEEEE;
+}
