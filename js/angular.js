@@ -1,19 +1,18 @@
 var app=angular.module("myapp",["ngRoute"]);
 app.config(function($routeProvider){
     $routeProvider
-    .when("/",{templateUrl: "trangchu.html",controller: "myCtrl"})
-    .when("/gioithieu",{templateUrl: "gioithieu.html",controller: "myCtrl"})
-    .when("/lienhe",{templateUrl: "lienhe.html",controller: "myCtrl"})
-    .when("/dangnhap",{templateUrl: "dangnhap.html",controller: "myCtrl"})
-    .when("/dangky",{templateUrl: "dangky.html",controller: "myCtrl"})
-    .when("/sanpham",{templateUrl: "sanpham.html",controller: "myCtrl"})
-    .when("/dulichmiennam",{templateUrl: "dulichmiennam.html",controller: "myCtrl"})
-    .when("/dulichchaua",{templateUrl: "dulichchaua.html",controller: "myCtrl"})
+    .when("/",{templateUrl: "pages/trangchu.html",controller: "myCtrl"})
+    .when("/gioithieu",{templateUrl: "pages/gioithieu.html",controller: "myCtrl"})
+    .when("/lienhe",{templateUrl: "pages/lienhe.html",controller: "myCtrl"})
+    .when("/dangnhap",{templateUrl: "pages/dangnhap.html",controller: "myCtrl"})
+    .when("/dangky",{templateUrl: "pages/dangky.html",controller: "myCtrl"})
+    .when("/dulichmiennam",{templateUrl: "pages/dulichmiennam.html",controller: "myCtrl"})
+    .when("/dulichchaua",{templateUrl: "pages/dulichchaua.html",controller: "myCtrl"})
     .when("/test",{templateUrl: "test.html",controller: "myCtrl"})
-    .when("/timkiem",{templateUrl: "timkiem.html",controller: "myCtrl"})
-    .when("/giohang",{templateUrl: "giohang.html",controller: "myCtrl"})
-    .when("/detail/:id",{templateUrl: "chitiet.html",controller: "myCtrl"},)
-    .when("/giohang/:id",{templateUrl: "giohang.html",controller: "myCtrl"},)
+    .when("/timkiem",{templateUrl: "components/timkiem.html",controller: "myCtrl"})
+    .when("/giohang",{templateUrl: "components/giohang.html",controller: "myCtrl"})
+    .when("/detail/:id",{templateUrl: "components/chitiet.html",controller: "myCtrl"},)
+    .when("/giohang/:id",{templateUrl: "components/giohang.html",controller: "myCtrl"},)
     .otherwise({templateUrl: "trangchu.html",controller: "myCtrl"})
 });
 app.controller("myCtrl",function ($scope, $rootScope, $routeParams, $http) {
