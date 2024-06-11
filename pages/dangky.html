@@ -6,51 +6,58 @@
                 chủ</a>/ Đăng ký</p>
     </div>
 </article>
-<div class="container d-flex justify-content-center">
-    <div class="card col-sm-6">
-        <div class="card-body">
-            <div class="container mb-3">
-                <div class="row">
-                    <div class="col-sm-12">
-                        <h4 class="text-danger fw-bold">ĐĂNG KÝ</h4>
-                        <form>
-                            <div class="mb-3">
-                                <label for="fullName" class="form-label fw-semibold">Họ và tên:</label>
-                                <input type="text" class="form-control" id="fullName" placeholder="Họ tên">
-                            </div>
-                            <div class="mb-3">
-                                <label for="email" class="form-label fw-semibold">Email:</label>
-                                <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Email">
-                            </div>
-                            <div class="mb-3">
-                                <label for="password" class="form-label fw-semibold">Mật khẩu:</label>
-                                <input type="password" class="form-control" id="password" placeholder="Mật khẩu">
-                            </div>
-                            <div class="mb-3">
-                                <label for="confirmPassword" class="form-label fw-semibold">Nhập lại mật khẩu:</label>
-                                <input type="password" class="form-control" id="confirmPassword" placeholder="Nhập lại mật khẩu">
-                            </div>
-                            <div class="mb-3">
-                                <label class="form-label fw-semibold">Giới tính:</label><br>
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" id="male" name="gender" value="male">
-                                    <label class="form-check-label" for="male">Nam</label>
+<div class="container ">
+    <div class="row">
+        <div class="card col-sm-6">
+            <div class="card-body">
+                <div class="container mb-3">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <h4 class="text-danger fw-bold">ĐĂNG KÝ</h4>
+                            <form name="regForm">
+                                <div class="mb-3">
+                                    <label for="fullName" class="form-label fw-semibold">Họ và tên:</label>
+                                    <input type="text" class="form-control" ng-model="fullname" name="txtfullname" placeholder="Họ tên" required>
+                                    <span ng-show="regForm.txtfullname.$invalid" class="text-danger">Vui lòng nhập đầy đủ họ tên</span>
                                 </div>
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" id="female" name="gender" value="female">
-                                    <label class="form-check-label" for="female">Nữ</label>
+                                <div class="mb-3">
+                                    <label for="email" class="form-label fw-semibold">Email:</label>
+                                    <input type="email" class="form-control" ng-model="email" name="txtemail" aria-describedby="emailHelp" placeholder="Email" required>
+                                    <span ng-show="regForm.txtemail.$invalid" class="text-danger">Vui lòng nhập đúng định dạng email</span>
                                 </div>
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" id="other" name="gender" value="other">
-                                    <label class="form-check-label" for="other">Khác</label>
+                                <div class="mb-3">
+                                    <label for="password" class="form-label fw-semibold">Mật khẩu:</label>
+                                    <input type="password" class="form-control" ng-model="password" name="txtpassword" placeholder="Mật khẩu" required>
+                                    <span ng-show="regForm.txtpassword.$invalid" class="text-danger">Vui lòng nhập mật khẩu</span>
                                 </div>
-                            </div>
-                            <div class="mb-3">
-                                <label for="phone" class="form-label fw-semibold">Số điện thoại:</label>
-                                <input type="text" class="form-control" id="phone" placeholder="Số điện thoại">
-                            </div>
-                            <button type="submit" class="btn btn-warning text-light fw-semibold" data-bs-toggle="modal" data-bs-target="#exampleModal">ĐĂNG KÝ</button>
-                        </form>
+                                <div class="mb-3">
+                                    <label for="confirmPassword" class="form-label fw-semibold">Nhập lại mật khẩu:</label>
+                                    <input type="password" class="form-control" ng-model="confirmPassword" name="txtconfirmpassword" placeholder="Nhập lại mật khẩu" required>
+                                    <span ng-show="regForm.txtconfirmpassword.$invalid" class="text-danger">Vui lòng nhập mật khẩu</span>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label fw-semibold">Giới tính:</label><br>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" id="male" ng-model="gender" value="male">
+                                        <label class="form-check-label" for="male">Nam</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" id="female" ng-model="gender" value="female">
+                                        <label class="form-check-label" for="female">Nữ</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" id="other" ng-model="gender" value="other">
+                                        <label class="form-check-label" for="other">Khác</label>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="phone" class="form-label fw-semibold">Số điện thoại:</label>
+                                    <input type="number" class="form-control" ng-model="phone" name="txtphonenum" placeholder="Số điện thoại">
+                                    <span ng-show="regForm.txtconfirmpassword.$invalid" class="text-danger">Vui lòng nhập số điện thoại</span>
+                                </div>
+                                <button type="submit" class="btn btn-warning text-light fw-semibold" data-bs-toggle="modal" data-bs-target="#exampleModal">ĐĂNG KÝ</button>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
