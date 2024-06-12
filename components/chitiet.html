@@ -1,6 +1,6 @@
 <div class="container">
     <div class="row">
-        <article class="col-sm-9" ng-controller="DetailController">
+        <article class="col-sm-9" ng-controller="myCtrl">
             <div class="container">
                 <div class="row">
                     <div class="col-sm-7 pt-3">
@@ -15,8 +15,8 @@
                             </div>
                             <div class="carousel-inner">
                                 <div class="carousel-item active">
-                                    <img src="{{product.image}}"
-                                        class="d-block w-100 img-fluid" alt="{{product.name}}">
+                                    <img src="{{detailPro.image}}"
+                                        class="d-block w-100 img-fluid" alt="{{detailPro.name}}">
                                 </div>
                                 <div class="carousel-item">
                                     <img src="https://pttravel.vn/wp-content/uploads/2024/01/bai-bien-my-khe-thanh-pho-da-nang-500x313.jpg"
@@ -40,15 +40,15 @@
                         </div>
                     </div>
                     <div class="col-sm-5 ps-3 pt-3">
-                        <h3>{{product.name}}</h3>
-                        <p>Giá tour trọn gói: <br><del class="text-info fs-5 fw-bold">{{product.price_before| number:0}}đ</del> <span
-                                class="text-danger fs-3 fw-bold">{{product.price_after| number:0}}đ</span></p>
+                        <h3>{{detailPro.name}}</h3>
+                        <p>Giá tour trọn gói: <br><del class="text-info fs-5 fw-bold">{{detailPro.price_before| number:0}}đ</del> <span
+                                class="text-danger fs-3 fw-bold">{{detailPro.price_after| number:0}}đ</span></p>
                         <div class="card">
                             <div class="card-body">
                                 <p class="m-0 p-0"><i class="fa-solid fa-location-dot"></i> Xuất phát từ: <strong>Hà
                                         Nội</strong></p>
                                 <p class="m-0 p-0"><i class="fa-solid fa-flag-checkered"></i> Khởi hành:</p>
-                                <p class="m-0 p-0"><i class="fa-solid fa-clock"></i> Lịch trình: <strong>{{product.time}}</strong>
+                                <p class="m-0 p-0"><i class="fa-solid fa-clock"></i> Lịch trình: <strong>{{detailPro.time}}</strong>
                                 </p>
                                 <p class="m-0 p-0"><i class="fa-solid fa-car"></i> Vận chuyển: <strong>Máy Bay, Ô Tô</strong>
                                 </p>
@@ -56,10 +56,10 @@
                         </div>
                         <hr>
                         <div class="d-grid pt-3">
-                            <a href="#!giohang"><button class="btn btn-primary btn-block">ĐẶT TOUR</button></a>
+                            <a href="#!giohang"><button class="btn btn-primary btn-block" ng-click="addCart(detailPro)">ĐẶT TOUR</button></a>
                         </div>
                         <br>
-                        <p>Danh mục: {{product.category}}</p>
+                        <p>Danh mục: {{detailPro.category}}</p>
                     </div>
                 </div>
                 <div class="row mt-3">
@@ -69,7 +69,7 @@
                         <div class="container mb-3">
                             <div class="row">
                                 <div class="col-sm-12">
-                                    <h4 class="text-primary fw-bold">HÃY LÀ NGƯỜI ĐẦU TIÊN NHẬN XÉT “{{product.name}}” </h4>
+                                    <h4 class="text-primary fw-bold">HÃY LÀ NGƯỜI ĐẦU TIÊN NHẬN XÉT “{{detailPro.name}}” </h4>
                                     <form class="fw-bold">
                                         <div class="mb-3">
                                             <label for="exampleInputEmail1" class="form-label">Đánh giá của bạn</label>

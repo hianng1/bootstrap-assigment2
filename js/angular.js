@@ -10,18 +10,18 @@ app.config(function($routeProvider){
     .when("/dulichchaua",{templateUrl: "pages/dulichchaua.html",controller: "myCtrl"})
     .when("/test",{templateUrl: "test.html",controller: "myCtrl"})
     .when("/timkiem",{templateUrl: "components/timkiem.html",controller: "myCtrl"})
-    .when("/giohang",{templateUrl: "components/giohang.html",controller: "myCtrl"})
+    .when("/giohang",{templateUrl: "pages/giohang.html",controller: "myCtrl"})
     .when("/detail/:id",{templateUrl: "components/chitiet.html",controller: "myCtrl"},)
-    .when("/giohang/:id",{templateUrl: "components/giohang.html",controller: "myCtrl"},)
     .otherwise({templateUrl: "trangchu.html",controller: "myCtrl"})
 });
-app.controller("myCtrl",function ($scope, $rootScope, $routeParams, $http) {
+app.controller("myCtrl",function ($scope, $rootScope, $routeParams, $http, $window) {
     $scope.products = [];
-        $http.get("http://localhost:3000/products").then(function (reponse) {
-            $scope.products = reponse.data;
-            console.log($scope.products);
-            $scope.detailPro=$scope.products.find(item=>item.id==$routeParams.id);
-        });
+    $http.get("http://localhost:3000/products").then(function (response) {
+        $scope.products = response.data;
+        console.log($scope.products);
+        $scope.detailPro=$scope.products.find(item=>item.id==$routeParams.id);
+    });
+
     $scope.sort='price_after';
     $scope.tang=function(){
         $scope.sort='price_after';
@@ -29,29 +29,62 @@ app.controller("myCtrl",function ($scope, $rootScope, $routeParams, $http) {
     $scope.giam=function(){
         $scope.sort='-price_after';
     }
- });  
- app.controller("DetailController", function ($scope, $routeParams, $http) {
-    $scope.product = {};
-    $http.get("http://localhost:3000/products/" + $routeParams.id).then(function (response) {
-        $scope.product = response.data;
-    }, function (error) {
-        console.log('Error loading product:', error);
-    });
-});
-$(document).ready(function() {
-    $('#increment').click(function() {
-        var value = parseInt($('#number').val(), 10);
-        value = isNaN(value) ? 0 : value;
-        value++;
-        $('#number').val(value);
-    });
 
-    $('#decrement').click(function() {
-        var value = parseInt($('#number').val(), 10);
-        value = isNaN(value) ? 0 : value;
-        value--;
-        $('#number').val(value);
-    });
+    // Khởi tạo giỏ hàng từ local storage hoặc tạo mới nếu không có
+    if ($window.localStorage.getItem('cart')) {
+        $rootScope.cart = JSON.parse($window.localStorage.getItem('cart'));
+    } else {
+        $rootScope.cart = [];
+    }
+
+    $scope.addCart=function(product){
+        var index=$rootScope.cart.findIndex(item=>item.id==product.id);
+        if(index==-1){
+            product.quantity=1;
+            $rootScope.cart.push(product);
+        }else{
+            $rootScope.cart[index].quantity++;
+        }
+        // Lưu giỏ hàng vào local storage
+        $window.localStorage.setItem('cart', JSON.stringify($rootScope.cart));
+        console.log($rootScope.cart);
+    }
+
+    $scope.plus = function(item) {
+        item.quantity += 1;
+        updateTotal();  // Cập nhật tổng tiền sau khi thay đổi số lượng
+    };
+
+    // Giảm số lượng sản phẩm
+    $scope.minus = function(item) {
+        if (item.quantity > 1) {  // Đảm bảo số lượng không giảm xuống dưới 1
+            item.quantity -= 1;
+            updateTotal();  // Cập nhật tổng tiền sau khi thay đổi số lượng
+        }
+    };
+
+    // Xóa sản phẩm khỏi giỏ hàng
+    $scope.remove = function(item) {
+        var index = $rootScope.cart.indexOf(item);
+        if (index !== -1) {
+            $rootScope.cart.splice(index, 1);  // Xóa sản phẩm ra khỏi mảng
+            updateTotal();  // Cập nhật tổng tiền sau khi xóa sản phẩm
+            
+            $timeout(function() {  // Sử dụng $timeout để đảm bảo cập nhật UI
+                updateTotal();  // Đảm bảo tổng tiền được cập nhật lại
+            });
+        }
+    };
+
+    // Tính tổng tiền của giỏ hàng
+    $scope.total = function() {
+        var total = 0;
+        $rootScope.cart.forEach(function(item) {
+            total += item.price * item.quantity;  // Tính tổng tiền của mỗi sản phẩm
+        });
+        return total;
+    };
 });
+
 
 

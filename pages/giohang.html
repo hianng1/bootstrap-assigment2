@@ -8,16 +8,22 @@
                     <th scope="col">GIÁ</th>
                     <th scope="col">SỐ LƯỢNG</th>
                     <th scope="col">TẠM TÍNH</th>
+                    <th scope="col">XÓA</th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <td>{{products.image}} {{products.name}}</td>
-                    <td>Mark</td>
+                  <tr ng-repeat="item in cart">
+                    <td><img src="{{item.image}}" width="80px" height="80px" alt=""> {{item.name}}</td>
+                    <td>{{item.price_after| number:0}}đ</td>
                     <td>
-                        <input type="number" class="text-center" id="number" value="0" style="width: 50px;">
+                        <button class="btn btn-primary" ng-click="minus(item)">-</button>
+                            {{item.quantity}}
+                            <button class="btn btn-primary" ng-click="plus(item)">+</button>
                     </td>
-                    <td>@mdo</td>
+                    <td>{{item.price_after * item.quantity| number:0}}đ</td>
+                    <td>
+                        <button class="btn btn-danger" ng-click="remove(item)">Xóa</button>
+                    </td>
                   </tr>
                 </tbody>
               </table>
@@ -94,3 +100,40 @@
         </div>
     </div>
 </div>
+<!-- trang giỏ hàng 
+ <h1>Đây là trang giỏ hàng</h1>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>STT</th>
+                        <th>Tên sản phẩm</th>
+                        <th>Giá</th>
+                        <th>Số lượng</th>
+                        <th>Thành tiền</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="item in cart">
+                        <td>{{$index + 1}}</td>
+                        <td>{{item.name}}</td>
+                        <td>{{item.price_after}}</td>
+                        <td>
+                            <button class="btn btn-primary" ng-click="minus(item)">-</button>
+                            {{item.quantity}}
+                            <button class="btn btn-primary" ng-click="plus(item)">+</button>
+                        </td>
+                        <td>{{item.price_after * item.quantity}}</td>
+                        <td>
+                            <button class="btn btn-danger" ng-click="remove(item)">Xóa</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <h2>Tổng tiền : {{total()}}</h2>
+        </div>
+    </div>
+</div> -->
