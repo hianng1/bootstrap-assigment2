@@ -21,7 +21,6 @@ app.controller("myCtrl",function ($scope, $rootScope, $routeParams, $http, $wind
         console.log($scope.products);
         $scope.detailPro=$scope.products.find(item=>item.id==$routeParams.id);
     });
-
     $scope.sort='price_after';
     $scope.tang=function(){
         $scope.sort='price_after';
@@ -30,14 +29,10 @@ app.controller("myCtrl",function ($scope, $rootScope, $routeParams, $http, $wind
         $scope.sort='-price_after';
     }
 
-    // Khởi tạo giỏ hàng từ local storage hoặc tạo mới nếu không có
-    if ($window.localStorage.getItem('cart')) {
-        $rootScope.cart = JSON.parse($window.localStorage.getItem('cart'));
-    } else {
-        $rootScope.cart = [];
-    }
-
     $scope.addCart=function(product){
+        if(typeof $rootScope.cart=='undefined'){
+            $rootScope.cart = [];
+        }
         var index=$rootScope.cart.findIndex(item=>item.id==product.id);
         if(index==-1){
             product.quantity=1;
@@ -45,44 +40,34 @@ app.controller("myCtrl",function ($scope, $rootScope, $routeParams, $http, $wind
         }else{
             $rootScope.cart[index].quantity++;
         }
-        // Lưu giỏ hàng vào local storage
-        $window.localStorage.setItem('cart', JSON.stringify($rootScope.cart));
         console.log($rootScope.cart);
     }
+    $scope.remove = function(item) {
+        const index = $scope.cart.indexOf(item);
+        if (index > -1) {
+            $scope.cart.splice(index, 1);
+        }
+        console.log('Cart Items after removal:', $scope.cart);
+    };
+
+    $scope.getTotal = function() {
+        return $scope.cart.reduce((total, item) => {
+            return total + (item.price_after * item.quantity);
+        }, 0);
+    };
 
     $scope.plus = function(item) {
-        item.quantity += 1;
-        updateTotal();  // Cập nhật tổng tiền sau khi thay đổi số lượng
-    };
-
-    // Giảm số lượng sản phẩm
-    $scope.minus = function(item) {
-        if (item.quantity > 1) {  // Đảm bảo số lượng không giảm xuống dưới 1
-            item.quantity -= 1;
-            updateTotal();  // Cập nhật tổng tiền sau khi thay đổi số lượng
-        }
-    };
-
-    // Xóa sản phẩm khỏi giỏ hàng
-    $scope.remove = function(item) {
-        var index = $rootScope.cart.indexOf(item);
+        const index = $scope.cart.indexOf(item);
         if (index !== -1) {
-            $rootScope.cart.splice(index, 1);  // Xóa sản phẩm ra khỏi mảng
-            updateTotal();  // Cập nhật tổng tiền sau khi xóa sản phẩm
-            
-            $timeout(function() {  // Sử dụng $timeout để đảm bảo cập nhật UI
-                updateTotal();  // Đảm bảo tổng tiền được cập nhật lại
-            });
+            $scope.cart[index].quantity += 1;
         }
     };
 
-    // Tính tổng tiền của giỏ hàng
-    $scope.total = function() {
-        var total = 0;
-        $rootScope.cart.forEach(function(item) {
-            total += item.price * item.quantity;  // Tính tổng tiền của mỗi sản phẩm
-        });
-        return total;
+    $scope.minus = function(item) {
+        const index = $scope.cart.indexOf(item);
+        if (index !== -1 && $scope.cart[index].quantity > 1) {
+            $scope.cart[index].quantity -= 1;
+        }
     };
 });
 

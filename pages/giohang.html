@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" ng-controller="myCtrl">
     <div class="row">
         <form action="">
             <table class="table">
@@ -11,8 +11,8 @@
                     <th scope="col">XÓA</th>
                   </tr>
                 </thead>
-                <tbody>
-                  <tr ng-repeat="item in cart">
+                <tbody ng-repeat="item in cart">
+                  <tr>
                     <td><img src="{{item.image}}" width="80px" height="80px" alt=""> {{item.name}}</td>
                     <td>{{item.price_after| number:0}}đ</td>
                     <td>
@@ -25,11 +25,14 @@
                         <button class="btn btn-danger" ng-click="remove(item)">Xóa</button>
                     </td>
                   </tr>
+                  
                 </tbody>
               </table>
-            <button class="btn btn-primary mb-3"><b>CẬP NHẬT GIỎ HÀNG</b></button>
         </form>
+        <h2 class="text-danger">Tổng Tiền: {{getTotal() | number:0}}đ</h2>
+        
     </div>
+    <button class="btn btn-primary ">Đặt tour</button>
     <div class="row">
         <div class="col-sm-7">
             <div class="card mb-4">
@@ -69,7 +72,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-sm-5">
+        <!-- <div class="col-sm-5">
             <div class="card">
                 <div class="card-body">
                     <div class="form">
@@ -84,8 +87,8 @@
                                 </thead>
                                 <tbody>
                                   <tr>
-                                    <td>{{products.name}}</td>
-                                    <td>@mdo</td>
+                                    <td>{{cart.name.$view}}</td>
+                                    <td>{{item.price_after * item.quantity| number:0}}đ</td>
                                   </tr>
                                 </tbody>
                               </table>
@@ -97,43 +100,6 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
     </div>
 </div>
-<!-- trang giỏ hàng 
- <h1>Đây là trang giỏ hàng</h1>
-<div class="container">
-    <div class="row">
-        <div class="col-md-12">
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th>STT</th>
-                        <th>Tên sản phẩm</th>
-                        <th>Giá</th>
-                        <th>Số lượng</th>
-                        <th>Thành tiền</th>
-                        <th></th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr ng-repeat="item in cart">
-                        <td>{{$index + 1}}</td>
-                        <td>{{item.name}}</td>
-                        <td>{{item.price_after}}</td>
-                        <td>
-                            <button class="btn btn-primary" ng-click="minus(item)">-</button>
-                            {{item.quantity}}
-                            <button class="btn btn-primary" ng-click="plus(item)">+</button>
-                        </td>
-                        <td>{{item.price_after * item.quantity}}</td>
-                        <td>
-                            <button class="btn btn-danger" ng-click="remove(item)">Xóa</button>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-            <h2>Tổng tiền : {{total()}}</h2>
-        </div>
-    </div>
-</div> -->

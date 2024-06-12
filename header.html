@@ -23,7 +23,7 @@
         </div>
     </div>
 </header>
-<div class="container">
+<div class="container" ng-controller="myCtrl">
     <nav class="navbar navbar-expand-lg">
         <div class="container-fluid">
             <a class="navbar-brand" href="#!">
@@ -62,19 +62,6 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                             aria-expanded="false">
-                            THUÊ XE DU LỊCH
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Xe du lịch 4 chỗ/5 chỗ ngồi</a></li>
-                            <li><a class="dropdown-item" href="#">Xe du lịch 7 chỗ ngồi</a></li>
-                            <li><a class="dropdown-item" href="#">Xe du lịch 16 chỗ ngồi</a></li>
-                            <li><a class="dropdown-item" href="#">Xe du lịch 29 - 30 chỗ ngồi</a></li>
-                            <li><a class="dropdown-item" href="#">Xe du lịch 35 chỗ ngồi</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                            aria-expanded="false">
                             DỊCH VỤ VISA
                         </a>
                         <ul class="dropdown-menu">
@@ -98,7 +85,11 @@
                             <li><a class="dropdown-item" href="#">Hộ Chiếu Online</a></li>
                         </ul>
                     </li>
+                    
                 </ul>
+            </div>
+            <div class="justify-content-end">
+                <a href="#!giohang"><button class="btn btn-primary"><i class="fa-solid fa-cart-shopping"></i> <span class="badge text-bg-danger">{{cart.length}}</span></button></a>
             </div>
         </div>
     </nav>
